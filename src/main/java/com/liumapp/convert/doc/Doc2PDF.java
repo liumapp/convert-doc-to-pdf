@@ -1,19 +1,22 @@
 package com.liumapp.convert.doc;
 
+import java.io.File;
 import java.io.InputStream;
 import com.aspose.words.*;
+
 /**
  * @author liumapp
- * @file Doc2PDf.java
+ * @file Doc2PDF.java
  * @email liumapp.com@gmail.com
  * @homepage http://www.liumapp.com
  * @date 4/25/18
  */
 public class Doc2PDF {
+
     public static boolean getLicense() {
         boolean result = false;
         try {
-            InputStream is = Test.class.getClassLoader().getResourceAsStream("license.xml"); //  license.xml应放在..\WebRoot\WEB-INF\classes路径下
+            InputStream is = Doc2PDF.class.getClassLoader().getResourceAsStream("license.xml");
             License aposeLic = new License();
             aposeLic.setLicense(is);
             result = true;
@@ -24,8 +27,8 @@ public class Doc2PDF {
     }
 
     public static void doc2pdf(String Address) {
-
-        if (!getLicense()) {          // 验证License 若不验证则转化出的pdf文档会有水印产生
+        // 验证License 若不验证则转化出的pdf文档会有水印产生
+        if (!getLicense()) {
             return;
         }
         try {
@@ -40,4 +43,5 @@ public class Doc2PDF {
             e.printStackTrace();
         }
     }
+
 }
