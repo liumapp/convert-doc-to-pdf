@@ -14,7 +14,7 @@ import com.aspose.words.*;
  */
 public class Doc2PDF {
 
-    public static boolean getLicense() {
+    public boolean getLicense() {
         boolean result = false;
         try {
             InputStream is = Doc2PDF.class.getClassLoader().getResourceAsStream("license.xml");
@@ -27,7 +27,7 @@ public class Doc2PDF {
         return result;
     }
 
-    public static void doc2pdf(String pdfPath , String wordPath) {
+    public void doc2pdf(String pdfPath , String wordPath) {
         // 验证License 若不验证则转化出的pdf文档会有水印产生
         if (!getLicense()) {
             return;

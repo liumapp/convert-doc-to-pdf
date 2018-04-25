@@ -17,10 +17,15 @@ import java.io.InputStream;
 
 public class Doc2PDFTest extends TestCase {
 
+    private String pdfPath = "/usr/local/tomcat/project/convert-doc-to-pdf/test.pdf";
+
+    private String docPath = "/usr/local/tomcat/project/convert-doc-to-pdf/doc/test.doc";
+
     @Test
     public void testConvert () throws FileNotFoundException {
-        InputStream in = Doc2PDF.class.getClassLoader().getResourceAsStream("license.xml");
-        System.out.println("hello");
+
+        Doc2PDF doc2PDF = new Doc2PDF();
+        doc2PDF.doc2pdf(pdfPath,docPath);
     }
 
 }
