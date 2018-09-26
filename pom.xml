@@ -4,7 +4,7 @@
 
   <groupId>com.liumapp.convert.doc</groupId>
   <artifactId>convert-doc-to-pdf</artifactId>
-  <version>v1.0.6</version>
+  <version>v1.1.0</version>
   <packaging>jar</packaging>
 
   <repositories>
