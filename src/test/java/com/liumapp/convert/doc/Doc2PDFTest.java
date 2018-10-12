@@ -22,7 +22,7 @@ public class Doc2PDFTest extends TestCase {
     private String docPath = "/usr/local/tomcat/project/convert-doc-to-pdf/doc/test.doc";
 
     @Test
-    public void testConvert () throws FileNotFoundException {
+    public void testConvert () throws Exception {
 
         Doc2PDF doc2PDF = new Doc2PDF();
         doc2PDF.doc2pdf(pdfPath,docPath);

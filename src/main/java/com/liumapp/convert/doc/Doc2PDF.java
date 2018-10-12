@@ -27,7 +27,7 @@ public class Doc2PDF {
         return result;
     }
 
-    public void doc2pdf(String pdfPath , String wordPath) {
+    public void doc2pdf(String pdfPath , String wordPath) throws Exception {
         // 验证License 若不验证则转化出的pdf文档会有水印产生
         if (!getLicense()) {
             return;
@@ -41,7 +41,8 @@ public class Doc2PDF {
             long now = System.currentTimeMillis();
             System.out.println("共耗时：" + ((now - old) / 1000.0) + "秒");  //转化用时
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("convert failed");
+            throw new Exception(e.getMessage());
         }
     }
 
